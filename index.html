@@ -38,7 +38,6 @@ header{
 }
 .logo-wrap{display:flex;align-items:center;gap:.9rem}
 .logo-icon{width:38px;height:38px;flex-shrink:0}
-.logo-text{}
 .logo{font-family:'Cinzel',serif;font-size:1.35rem;font-weight:700;letter-spacing:.18em;
   background:linear-gradient(135deg,#c9a655 0%,#e8c97a 45%,#b8924a 100%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -270,7 +269,9 @@ footer strong{color:var(--accent);font-weight:600}
   <button class="cat-btn" onclick="filterCat('damas',this)">Damas</button>
   <button class="cat-btn" onclick="filterCat('caballeros',this)">Caballeros</button>
   <button class="cat-btn" onclick="filterCat('niños',this)">Niños</button>
-  <button class="cat-btn" onclick="filterCat('electronicos',this)">Electrònicos</button>
+  <button class="cat-btn" onclick="filterCat('calzado',this)">Calzado</button>
+  <button class="cat-btn" onclick="filterCat('accesorios',this)">Accesorios</button>
+  <button class="cat-btn" onclick="filterCat('miscelaneas',this)">Miscelàneas</button>
 </div>
 
 <!-- CATÁLOGO -->
@@ -342,8 +343,8 @@ footer strong{color:var(--accent);font-weight:600}
 <footer>
   <div class="footer-logo">ÁGORA</div>
   <p>
-    <strong>Tienda Multicatálogo</strong> · Colección 2025<br/>
-    Atención Lun–Sáb 9:00am – 8:00pm · Dom 10:00am – 5:00pm<br/>
+    <strong>Tienda Multicatálogo</strong> · Colección 2026<br/>
+    Atención Lun–Sáb 8:00am – 10:00pm · Dom 10:00am – 10:00pm<br/>
     Productos disponibles en <strong>USD</strong> y <strong>CUP</strong> según se indica<br/>
     Los precios pueden variar · Consulta disponibilidad antes de confirmar
   </p>
@@ -353,7 +354,7 @@ footer strong{color:var(--accent);font-weight:600}
 /* ══════════════════════════════════════════
    CONFIGURACIÓN — edita estos valores
 ══════════════════════════════════════════ */
-const WA_NUMBER = '+5358208030'; // tu número con código de país, sin +
+const WA_NUMBER = '+5350379424'; // tu número con código de país, sin +
 const CUP_RATE  = 540;          // tasa de cambio USD → CUP
 
 /* ══════════════════════════════════════════
@@ -364,82 +365,130 @@ const CUP_RATE  = 540;          // tasa de cambio USD → CUP
 ══════════════════════════════════════════ */
 const products = [
   // JOYERIA
-  {id:1, cat:'joyeria', name:'Conjunto de 4 piezas Trebol negro', desc:'Imitaciòn Van Cleff  -  Baño de plata (acero inox)', currency:'USD', price:10, tag:'new', emoji:'', img:'1.jpeg'},
-  {id:2, cat:'joyeria', name:'Conjunto reloj blanco con 4 piezas de joyeria', desc:' Baño de plata ', currency:'USD', price:12, tag:'new', emoji:'', img:'2.jpeg'},
-  {id:3, cat:'joyeria', name:'Conjunto reloj rosa con 4 piezas de joyeria', desc:' Baño de plata ', currency:'USD', price:12, tag:'new', emoji:'', img:'3.jpeg'},
-  {id:4, cat:'joyeria', name:'Pulsera de barril con 4 charms (realeza)', desc:' Baño de plata ', currency:'USD', price:15, tag:'new', emoji:'', img:'4.jpeg'},
-  {id:5, cat:'joyeria', name:'Pulsera de barril con 2 charms (sabiduria y fortuna)', desc:' Baño de plata ', currency:'USD', price:13, tag:'new', emoji:'', img:'5.jpeg'},
-  {id:6, cat:'joyeria', name:'Pulsera con 2 charms (azul infinito)', desc:' Baño de plata', currency:'USD', price:13, tag:'new', emoji:'', img:'6.jpeg'},
-  {id:7, cat:'joyeria', name:'Pulsera con 4 charms (brisa azul)', desc:' Baño de plata ', currency:'USD', price:15, tag:'new', emoji:'', img:'7.jpeg'},
-  {id:8, cat:'joyeria', name:'Conjunto de cadena, pulsera y 4 charms (primavera)', desc:' Baño de plata', currency:'USD', price:25, tag:'new', emoji:'', img:'8.jpeg'},
-  {id:9, cat:'joyeria', name:'Pulsera con 4 charms (azul profundo)', desc:' Baño de plata', currency:'USD', price:15, tag:'new', emoji:'', img:'9.jpeg'},
-  {id:10, cat:'joyeria', name:'Pulsera con 2 charms (cielo)', desc:' Baño de plata', currency:'USD', price:13, tag:'new', emoji:'', img:'10.jpeg'},
-  {id:11, cat:'joyeria', name:'Pulsera con 2 charms (aurora)', desc:' Baño de plata', currency:'USD', price:13, tag:'new', emoji:'', img:'11.jpeg'},
-  {id:12, cat:'joyeria', name:'Pulsera rigida con cascabel', desc:' Baño de plata', currency:'USD', price:10, tag:'new', emoji:'', img:'12.jpeg'},
-  {id:13, cat:'joyeria', name:'Anillo de compromiso (corazon)', desc:' Baño de plata  -  Talla 10', currency:'USD', price:5, tag:'new', emoji:'', img:'13.jpeg'},
-  {id:14, cat:'joyeria', name:'Aretes pequeños con flor', desc:' Baño de plata', currency:'USD', price:8, tag:'new', emoji:'', img:'14.jpeg'},
-  {id:15, cat:'joyeria', name:'Pulsera con 2 charms (paz y amor)', desc:' Baño de plata', currency:'USD', price:13, tag:'new', emoji:'', img:'15.jpeg'},
-  {id:16, cat:'joyeria', name:'Pulsera de barril con 2 charms (flores)', desc:' Baño de plata', currency:'USD', price:13, tag:'new', emoji:'', img:'16.jpeg'},
-  {id:17, cat:'joyeria', name:'Pulsera de barril con 2 charms (audacia)', desc:' Baño de plata', currency:'USD', price:13, tag:'new', emoji:'', img:'17.jpeg'},
-  {id:18, cat:'joyeria', name:'Pulsera de barril con 2 charms (amor)', desc:' Baño de plata', currency:'USD', price:13, tag:'new', emoji:'', img:'18.jpeg'},
-  {id:19, cat:'joyeria', name:'Conjunto de cadena, pulsera y 4 charms (suerte)', desc:' Baño de plata', currency:'USD', price:25, tag:'new', emoji:'', img:'19.jpeg'},
-  {id:20, cat:'joyeria', name:'Charm', desc:' Baño de plata', currency:'USD', price:3, tag:'new', emoji:'', img:'20.jpeg'},
-  {id:21, cat:'joyeria', name:'Pulseras rigidas ajustables', desc:' Baño de plata', currency:'USD', price:10, tag:'new', emoji:'', img:'21.jpeg'},
-  {id:22, cat:'joyeria', name:'Pulsera de barril con 2 charms (fortuna)', desc:' Baño de plata', currency:'USD', price:13, tag:'new', emoji:'', img:'22.jpeg'},
-  {id:23, cat:'joyeria', name:'Tobilleras', desc:' Baño de plata', currency:'USD', price:10, tag:'new', emoji:'', img:'23.jpeg'},
-
+  {id:1, cat:'joyeria', name:'Conjunto de 5 piezas Trebol verde', desc:'Imitaciòn Van Cleff  -  Baño de plata (acero inox)', currency:'USD', price:12, tag:'new', emoji:'', img:'1.jpeg'},
+  {id:2, cat:'joyeria', name:'Conjunto de 3 piezas Trebol verde', desc:'Imitaciòn Van Cleff  -  Baño de plata (acero inox)', currency:'USD', price:10, tag:'new', emoji:'', img:'2.jpeg'},
+  {id:3, cat:'joyeria', name:'Conjunto de 2 piezas Trebol verde', desc:'Imitaciòn Van Cleff  -  Baño de plata (acero inox)', currency:'USD', price:8, tag:'new', emoji:'', img:'3.jpeg'},
+  {id:4, cat:'joyeria', name:'Conjunto de 3 piezas Trebol negro', desc:'Imitaciòn Van Cleff  -  Baño de plata (acero inox)', currency:'USD', price:10, tag:'new', emoji:'', img:'4.webp'},
+  {id:5, cat:'joyeria', name:'Conjunto de 3 piezas Trebol negro', desc:'Imitaciòn Van Cleff  -  Baño de plata (acero inox)', currency:'USD', price:10, tag:'new', emoji:'', img:'5.jpeg'},
+  {id:6, cat:'joyeria', name:'Conjunto de 3 piezas para compromiso', desc:' Baño de plata', currency:'USD', price:12, tag:'new', emoji:'', img:'6.jpeg'},
+  {id:7, cat:'joyeria', name:'Conjunto de cadena con dije y aretes brillantes', desc:' Baño de plata', currency:'USD', price:10, tag:'new', emoji:'', img:'7.jpeg'},
+  {id:8, cat:'joyeria', name:'Conjunto de cadena con dije y aretes de nudo', desc:' Baño de plata', currency:'USD', price:10, tag:'new', emoji:'', img:'8.webp'},
+  {id:9, cat:'joyeria', name:'Conjunto de cadena, pulsera y 4 charms (primavera)', desc:' Baño de plata', currency:'USD', price:25, tag:'new', emoji:'', img:'9.webp'},
+  {id:10, cat:'joyeria', name:'Conjunto de cadena, pulsera y 4 charms (suerte)', desc:' Baño de plata', currency:'USD', price:25, tag:'new', emoji:'', img:'10.jpeg'},
+  {id:11, cat:'joyeria', name:'Conjunto de cadena, pulsera y 4 charms (realeza)', desc:' Baño de plata', currency:'USD', price:25, tag:'new', emoji:'', img:'11.jpeg'},
+  {id:12, cat:'joyeria', name:'Conjunto de cadena fina, pulsera rigida y  charm', desc:' Baño de plata', currency:'USD', price:20, tag:'new', emoji:'', img:'12.jpeg'},
+  {id:13, cat:'joyeria', name:'Conjunto reloj rosa con 4 piezas de joyeria', desc:' Baño de plata ', currency:'USD', price:12, tag:'new', emoji:'', img:'13.jpeg'},
+  {id:14, cat:'joyeria', name:'Conjunto reloj blanco con 4 piezas de joyeria', desc:' Baño de plata ', currency:'USD', price:12, tag:'new', emoji:'', img:'14.webp'},
+  {id:15, cat:'joyeria', name:'Charm', desc:' Baño de plata', currency:'USD', price:3, tag:'new', emoji:'', img:'15.jpeg'},
+  {id:16, cat:'joyeria', name:'Pulsera de barril con 4 charms (realeza)', desc:' Baño de plata ', currency:'USD', price:15, tag:'new', emoji:'', img:'16.webp'},
+  {id:17, cat:'joyeria', name:'Pulsera con 2 charms (cielo)', desc:' Baño de plata', currency:'USD', price:13, tag:'new', emoji:'', img:'17.webp'},
+  {id:18, cat:'joyeria', name:'Pulsera con 4 charms (tramas)', desc:' Baño de plata', currency:'USD', price:15, tag:'new', emoji:'', img:'18.webp'},
+  {id:19, cat:'joyeria', name:'Pulsera con 2 charms (paz y amor)', desc:' Baño de plata', currency:'USD', price:13, tag:'new', emoji:'', img:'19.webp'},
+  {id:20, cat:'joyeria', name:'Pulsera de barril con 4 charms (amor y fortuna)', desc:' Baño de plata ', currency:'USD', price:15, tag:'new', emoji:'', img:'20.jpeg'},
+  {id:21, cat:'joyeria', name:'Pulsera de barril con 2 charms (amor)', desc:' Baño de plata', currency:'USD', price:13, tag:'new', emoji:'', img:'21.jpeg'},
+  {id:22, cat:'joyeria', name:'Pulsera de barril con 2 charms (flores)', desc:' Baño de plata', currency:'USD', price:13, tag:'new', emoji:'', img:'22.jpeg'},
+  {id:23, cat:'joyeria', name:'Pulsera de barril con 2 charms (audacia)', desc:' Baño de plata', currency:'USD', price:13, tag:'new', emoji:'', img:'23.jpeg'},
+  {id:24, cat:'joyeria', name:'Pulsera de barril con 2 charms (fortuna)', desc:' Baño de plata', currency:'USD', price:13, tag:'new', emoji:'', img:'24.jpeg'},
+  {id:25, cat:'joyeria', name:'Pulsera de corazon con 4 charms (reina)', desc:' Baño de plata ', currency:'USD', price:15, tag:'new', emoji:'', img:'25.jpeg'},
+  {id:26, cat:'joyeria', name:'Pulseras imitacion PANDORA con 4 Charms I', desc:' Baño de plata', currency:'USD', price:15, tag:'new', emoji:'', img:'26.jpeg'},
+  {id:27, cat:'joyeria', name:'Pulseras imitacion PANDORA con 4 Charms II', desc:' Baño de plata', currency:'USD', price:15, tag:'new', emoji:'', img:'27.jpeg'},
+  {id:28, cat:'joyeria', name:'Pulsera rigida con cascabel', desc:' Baño de plata', currency:'USD', price:10, tag:'new', emoji:'', img:'28.jpeg'},
+  {id:29, cat:'joyeria', name:'Pulsera rigida ajustable', desc:' Baño de plata', currency:'USD', price:10, tag:'new', emoji:'', img:'29.jpeg'},
+  {id:30, cat:'joyeria', name:'Pulsera con dijes colgantes', desc:' Baño de plata', currency:'USD', price:10, tag:'new', emoji:'', img:'30.jpeg'},
+  {id:31, cat:'joyeria', name:'Cadena con charm de trebol', desc:' Baño de plata  -  Talla 50cm  -  Eslabon de serpiente grueso', currency:'USD', price:15, tag:'new', emoji:'', img:'31.jpeg'},
+  {id:32, cat:'joyeria', name:'Cadena con charm de mariposa', desc:' Baño de plata  -  Talla 50cm  -  Eslabon de serpiente grueso', currency:'USD', price:15, tag:'new', emoji:'', img:'32.jpeg'},
+  {id:33, cat:'joyeria', name:'Cadena con charm de triada', desc:' Baño de plata  -  Talla 50cm  -  Eslabon de serpiente grueso', currency:'USD', price:15, tag:'new', emoji:'', img:'33.jpeg'},
+  {id:34, cat:'joyeria', name:'Cadena con charm de flor', desc:' Baño de plata  -  Talla 50cm  -  Eslabon de serpiente grueso', currency:'USD', price:15, tag:'new', emoji:'', img:'34.jpeg'},
+  {id:35, cat:'joyeria', name:'Cadena con dije circular', desc:' Baño de plata  -  Talla 45cm ', currency:'USD', price:10, tag:'new', emoji:'', img:'35.webp'},
+  {id:36, cat:'joyeria', name:'Aretes pequeños con piedras', desc:' Baño de plata', currency:'USD', price:8, tag:'new', emoji:'', img:'36.webp'},
+  {id:37, cat:'joyeria', name:'Aretes pequeños con flor', desc:' Baño de plata', currency:'USD', price:8, tag:'new', emoji:'', img:'37.jpeg'},
+  {id:38, cat:'joyeria', name:'Anillo de compromiso (corazon)', desc:' Baño de plata  -  Talla 10', currency:'USD', price:5, tag:'new', emoji:'', img:'38.webp'},
+  {id:39, cat:'joyeria', name:'Anillo con delfines', desc:'Plata 925  -  Talla 8', currency:'USD', price:25, tag:'new', emoji:'', img:'39.jpeg'},
+  {id:40, cat:'joyeria', name:'Tobillera', desc:' Baño de plata', currency:'USD', price:8, tag:'new', emoji:'', img:'40.webp'},
 
   // DAMAS
-  {id:101, cat:'damas', name:'Vestido rojo', desc:'Talla M', currency:'USD', price:10, tag:'new', emoji:'', img:'101.jpeg'},
-  {id:102, cat:'damas', name:'Tanga', desc:'Talla S', currency:'USD', price:10, tag:'new', emoji:'', img:'102.jpeg'},
-  {id:103, cat:'damas', name:'Vestido rojo largo', desc:'Talla M', currency:'USD', price:15, tag:'new', emoji:'', img:'103.jpeg'},
-  {id:104, cat:'damas', name:'Vestido negro de flores', desc:'Talla M', currency:'USD', price:15, tag:'new', emoji:'', img:'104.jpeg'},
-  {id:105, cat:'damas', name:'Bolso de vinyl', desc:'Confecciòn industrial (color verde)', currency:'USD', price:15, tag:'new', emoji:'', img:'105.jpeg'},
-  {id:106, cat:'damas', name:'Bolso de vinyl', desc:'Confecciòn industrial (color marròn)', currency:'USD', price:15, tag:'new', emoji:'', img:'106.jpeg'},
-  {id:107, cat:'damas', name:'Vestido rojo de mangas', desc:'Talla M', currency:'USD', price:10, tag:'new', emoji:'', img:'107.jpeg'},
-  {id:108, cat:'damas', name:'Vestido negro largo', desc:'Talla S/M', currency:'USD', price:10, tag:'new', emoji:'', img:'108.jpeg'},
-  {id:109, cat:'damas', name:'Vestido azul para embarazada', desc:'Talla M', currency:'USD', price:10, tag:'new', emoji:'', img:'109.jpeg'},
-  {id:110, cat:'damas', name:'Mono-short blanco', desc:'Marca ASOS  - Talla M', currency:'USD', price:8, tag:'', emoji:'', img:'110.jpeg'},
-  {id:111, cat:'damas', name:'Vestido fresco', desc:'Talla M', currency:'USD', price:8, tag:'new', emoji:'', img:'111.jpeg'},
-  {id:112, cat:'damas', name:'Conjunto elegante', desc:'Talla M', currency:'USD', price:12, tag:'new', emoji:'', img:'112.jpeg'},
-  {id:113, cat:'damas', name:'Conjunto Blusa y Jean blanco', desc:'Talla M', currency:'USD', price:18, tag:'new', emoji:'', img:'113.jpeg'},
-  {id:114, cat:'damas', name:'Camisero azul', desc:'Talla L-XL', currency:'USD', price:15, tag:'new', emoji:'', img:'114.jpeg'},
-  {id:115, cat:'damas', name:'Cuña engomada con lazo', desc:'Talla 40', currency:'CUP', price:3000, tag:'', emoji:'', img:'115.jpeg'},
-  {id:116, cat:'damas', name:'Vestido azul celeste', desc:'Marca Forever21  - Talla S-M', currency:'USD', price:10, tag:'', emoji:'', img:'116.jpeg'},
-  {id:117, cat:'damas', name:'Vestido estampado', desc:'Talla L ', currency:'USD', price:12, tag:'new', emoji:'', img:'117.jpeg'},
-  {id:118, cat:'damas', name:'Zapatos engomados', desc:'Marca CROCS  -  Talla 38', currency:'CUP', price:5000, tag:'new', emoji:'', img:'118.jpeg'},
-  {id:119, cat:'damas', name:'Blusa estampada azul', desc:'Marca SheIn  -  Talla L', currency:'USD', price:8, tag:'new', emoji:'', img:'119.jpeg'},
-  {id:120, cat:'damas', name:'Blusa estilo pañuelo', desc:'Marca SheIn  -  Talla L', currency:'USD', price:8, tag:'new', emoji:'', img:'120.jpeg'},
-  {id:121, cat:'damas', name:'Conjunto sin costuras', desc:'Talla S-M', currency:'CUP', price:5000, tag:'new', emoji:'', img:'121.jpeg'},
-  {id:122, cat:'damas', name:'Short Blanco', desc:'Talla S-M', currency:'CUP', price:1000, tag:'', emoji:'', img:'122.jpeg'},
-  {id:123, cat:'damas', name:'Short de mezclilla rasgado', desc:'Talla M', currency:'CUP', price:2000, tag:'', emoji:'', img:'123.jpeg'},
-  {id:124, cat:'damas', name:'Short de mezclilla corte alto', desc:'Marca Fashion NOVA  -  Talla S-M', currency:'USD', price:8, tag:'new', emoji:'', img:'124.jpeg'},
-  {id:125, cat:'damas', name:'Blusa negra con puntos blancos', desc:'Talla L', currency:'CUP', price:1500, tag:'new', emoji:'', img:'125.jpeg'},
-  {id:126, cat:'damas', name:'Mono-short floreado', desc:'Talla M', currency:'USD', price:10, tag:'', emoji:'', img:'126.jpeg'},
-  {id:127, cat:'damas', name:'Blusa naranja de mangas largas', desc:'Marca Mossimo  -  Talla M-L', currency:'USD', price:10, tag:'new', emoji:'', img:'127.jpeg'},
-  {id:128, cat:'damas', name:'Blusa corta', desc:'Marca SheIn  -  Talla M', currency:'USD', price:5, tag:'new', emoji:'', img:'128.jpeg'},
-  {id:129, cat:'damas', name:'Conjunto de verano', desc:'Marca SheIn  -  Talla S-M', currency:'USD', price:15, tag:'new', emoji:'', img:'129.jpeg'},
-  {id:130, cat:'damas', name:'Conjunto de verano 2', desc:'Marca SheIn  -  Talla S-M', currency:'USD', price:16, tag:'new', emoji:'', img:'130.jpeg'},
-  {id:131, cat:'damas', name:'Bolso de vinyl', desc:'Confecciòn industrial (color negro)', currency:'USD', price:15, tag:'new', emoji:'', img:'131.jpeg'},
+  {id:201, cat:'damas', name:'Vestido rojo', desc:'Talla M', currency:'USD', price:10, tag:'new', emoji:'', img:'201.webp'},
+  {id:202, cat:'damas', name:'Vestido rojo largo', desc:'Talla M', currency:'USD', price:15, tag:'new', emoji:'', img:'202.webp'},
+  {id:203, cat:'damas', name:'Vestido rojo de mangas', desc:'Talla M', currency:'USD', price:10, tag:'new', emoji:'', img:'203.webp'},
+  {id:204, cat:'damas', name:'Vestido rojo de tirantes', desc:'Marca Forever21  - Talla S-M', currency:'USD', price:10, tag:'new', emoji:'', img:'204.jpeg'},
+  {id:205, cat:'damas', name:'Vestido negro de flores', desc:'Talla M', currency:'USD', price:15, tag:'new', emoji:'', img:'205.webp'},
+  {id:206, cat:'damas', name:'Vestido negro largo', desc:'Talla S/M', currency:'USD', price:10, tag:'new', emoji:'', img:'206.webp'},
+  {id:207, cat:'damas', name:'Camisero azul', desc:'Talla L-XL', currency:'USD', price:15, tag:'new', emoji:'', img:'207.webp'},
+  {id:208, cat:'damas', name:'Vestido azul para embarazada', desc:'Talla M', currency:'USD', price:10, tag:'new', emoji:'', img:'208.webp'},
+  {id:209, cat:'damas', name:'Vestido azul celeste', desc:'Marca Forever21  - Talla S-M', currency:'USD', price:10, tag:'', emoji:'', img:'209.webp'},
+  {id:210, cat:'damas', name:'Vestido fresco', desc:'Talla M', currency:'USD', price:8, tag:'new', emoji:'', img:'210.webp'},
+  {id:211, cat:'damas', name:'Mono-short blanco', desc:'Marca ASOS  - Talla M', currency:'USD', price:8, tag:'', emoji:'', img:'211.webp'},
+  {id:212, cat:'damas', name:'Vestido de gala', desc:'Marca Triangles Citys  -  Talla L', currency:'USD', price:20, tag:'new', emoji:'', img:'212.jpeg'},
+  {id:213, cat:'damas', name:'Vestido estampado', desc:'Talla L ', currency:'USD', price:12, tag:'new', emoji:'', img:'213.webp'},
+  {id:214, cat:'damas', name:'Conjunto elegante', desc:'Talla M', currency:'USD', price:12, tag:'new', emoji:'', img:'214.webp'},
+  {id:215, cat:'damas', name:'Mono-short floreado', desc:'Talla M', currency:'USD', price:10, tag:'', emoji:'', img:'215.jpeg'},
+  {id:216, cat:'damas', name:'Blusa azul tejida', desc:'Tejido industrial  -  Talla M', currency:'USD', price:5, tag:'new', emoji:'', img:'216.jpeg'},
+  {id:217, cat:'damas', name:'Blusa corte princesa', desc:'Talla M', currency:'USD', price:5, tag:'new', emoji:'', img:'217.jpeg'},
+  {id:218, cat:'damas', name:'Blusa negra de tirantes gruesos', desc:'Talla M', currency:'CUP', price:2000, tag:'new', emoji:'', img:'218.jpeg'},
+  {id:219, cat:'damas', name:'Blusa blanca de vestir', desc:'Talla M', currency:'USD', price:5, tag:'new', emoji:'', img:'219.jpeg'},
+  {id:220, cat:'damas', name:'Blusa negra con puntos blancos', desc:'Talla L', currency:'CUP', price:1500, tag:'new', emoji:'', img:'220.jpeg'},
+  {id:221, cat:'damas', name:'Blusa de encaje', desc:'Talla M', currency:'CUP', price:1500, tag:'', emoji:'', img:'221.jpeg'},
+  {id:222, cat:'damas', name:'Blusa estilo pullover', desc:'Talla L-XL', currency:'USD', price:5, tag:'new', emoji:'', img:'222.jpeg'},
+  {id:223, cat:'damas', name:'Blusa estampada azul', desc:'Marca SheIn  -  Talla L', currency:'USD', price:8, tag:'new', emoji:'', img:'223.jpeg'},
+  {id:224, cat:'damas', name:'Blusa estilo pañuelo', desc:'Marca SheIn  -  Talla L', currency:'USD', price:8, tag:'new', emoji:'', img:'224.webp'},
+  {id:225, cat:'damas', name:'Blusa naranja de mangas largas', desc:'Marca Mossimo  -  Talla M-L', currency:'USD', price:10, tag:'new', emoji:'', img:'225.webp'},
+  {id:226, cat:'damas', name:'Camiseta Negra', desc:'Talla L', currency:'CUP', price:1500, tag:'', emoji:'', img:'226.webp'},
+  {id:227, cat:'damas', name:'Blusa corta', desc:'Marca SheIn  -  Talla M', currency:'USD', price:5, tag:'new', emoji:'', img:'227.webp'},
+  {id:228, cat:'damas', name:'Pantalon blanco', desc:'Talla M  -  Tela gruesa', currency:'USD', price:10, tag:'new', emoji:'', img:'228.jpeg'},
+  {id:229, cat:'damas', name:'Short de mezclilla corte alto', desc:'Marca Fashion NOVA  -  Talla S-M', currency:'USD', price:8, tag:'new', emoji:'', img:'229.webp'},
+  {id:230, cat:'damas', name:'Short de mezclilla rasgado', desc:'Talla M', currency:'CUP', price:2000, tag:'', emoji:'', img:'230.webp'},
+  {id:231, cat:'damas', name:'Short Blanco', desc:'Talla S-M', currency:'CUP', price:1000, tag:'', emoji:'', img:'231.webp'},
+  {id:232, cat:'damas', name:'Conjunto de verano I', desc:'Marca SheIn  -  Talla S-M', currency:'USD', price:15, tag:'new', emoji:'', img:'232.webp'},
+  {id:233, cat:'damas', name:'Conjunto de verano II', desc:'Marca SheIn  -  Talla S-M', currency:'USD', price:16, tag:'new', emoji:'', img:'233.webp'},
+  {id:234, cat:'damas', name:'Conjunto Blusa y Jean blanco', desc:'Talla M', currency:'USD', price:18, tag:'new', emoji:'', img:'234.webp'},
+  {id:235, cat:'damas', name:'Conjunto sin costuras', desc:'Talla S-M', currency:'CUP', price:5000, tag:'new', emoji:'', img:'235.webp'},
+  {id:236, cat:'damas', name:'Bikini', desc:'Talla S', currency:'USD', price:10, tag:'new', emoji:'', img:'236.webp'},
 
   // CABALLEROS
-  {id:5, cat:'caballeros', name:'Camisa Oxford', desc:'100% algodón, casual & formal, S–XXL', currency:'USD', price:20, tag:'new', emoji:'👔',
-   img:'https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=400&q=80'},
-  {id:6, cat:'caballeros', name:'Jeans Slim Fit', desc:'Denim premium, varios tonos, tallas 28–38', currency:'USD', price:30, tag:null, emoji:'🔵',
-   img:'https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&q=80'},
-  {id:7, cat:'caballeros', name:'Polo Premium', desc:'Tejido piqué, logo bordado, colores clásicos', currency:'CUP', price:3500, tag:'hot', emoji:'👕',
-   img:'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=400&q=80'},
-  {id:8, cat:'caballeros', name:'Chaqueta Casual', desc:'Tela ligera, bolsillos internos, moderna', currency:'USD', price:55, tag:null, emoji:'🧥',
-   img:'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&q=80'},
-    
+  {id:401, cat:'caballeros', name:'Camisa de manga larga azul de cuadros', desc:'Talla M', currency:'USD', price:12, tag:'new', emoji:'', img:'401.webp'},
+  {id:402, cat:'caballeros', name:'Camisa de manga larga marròn', desc:'Talla L - XL', currency:'USD', price:12, tag:'new', emoji:'', img:'402.webp'},
+  {id:403, cat:'caballeros', name:'Camisa guayabera blanca', desc:'Talla L - XL', currency:'USD', price:15, tag:'new', emoji:'', img:'403.webp'},
+  {id:404, cat:'caballeros', name:'Camisa de manga larga beige', desc:'Talla L - XL', currency:'USD', price:12, tag:'new', emoji:'', img:'404.webp'},
+  {id:405, cat:'caballeros', name:'Saco azul celeste', desc:'Talla L - XL', currency:'USD', price:20, tag:'new', emoji:'', img:'405.jpeg'},
+  {id:406, cat:'caballeros', name:'Saco blanco', desc:'Talla L - XL', currency:'USD', price:20, tag:'new', emoji:'', img:'406.jpeg'},
+  {id:407, cat:'caballeros', name:'Camisa manga larga de mezclilla', desc:'Talla L - XL', currency:'USD', price:12, tag:'new', emoji:'', img:'407.jpeg'},
+  {id:408, cat:'caballeros', name:'Enguatada roja', desc:'Talla L - XL', currency:'USD', price:8, tag:'new', emoji:'', img:'408.jpeg'},
+  {id:409, cat:'caballeros', name:'Enguatada azul', desc:'Talla L - XL', currency:'USD', price:8, tag:'new', emoji:'', img:'409.jpeg'},
+  {id:410, cat:'caballeros', name:'Pantalon de mezclilla gris', desc:'Talla 32', currency:'USD', price:15, tag:'new', emoji:'', img:'410.jpeg'},
+
+  // NIÑOS
+  
+  // CALZADO
+  {id:601, cat:'calzado', name:'Tenis estampados', desc:'Talla 38', currency:'CUP', price:3500, tag:'', emoji:'', img:'601.webp'},
+  {id:602, cat:'calzado', name:'Cuña engomada con lazo', desc:'Talla 40', currency:'CUP', price:3000, tag:'', emoji:'', img:'602.webp'},
+  {id:603, cat:'calzado', name:'Zapatos engomados', desc:'Marca CROCS  -  Talla 38', currency:'CUP', price:5000, tag:'new', emoji:'', img:'603.webp'},
+  {id:604, cat:'calzado', name:'Pantunflas', desc:'Talla 39 - 40', currency:'CUP', price:1000, tag:'new', emoji:'', img:'604.jpeg'},
+// ACCESORIOS
+  {id:801, cat:'accesorios', name:'Bolso de vinyl', desc:'Confecciòn industrial (color verde)', currency:'USD', price:15, tag:'new', emoji:'', img:'801.webp'},
+  {id:802, cat:'accesorios', name:'Bolso de vinyl', desc:'Confecciòn industrial (color negro)', currency:'USD', price:15, tag:'new', emoji:'', img:'802.webp'},
+  {id:803, cat:'accesorios', name:'Bolso de vinyl', desc:'Confecciòn industrial (color marròn)', currency:'USD', price:15, tag:'new', emoji:'', img:'803.webp'},
+  {id:804, cat:'accesorios', name:'Mochila negra', desc:'', currency:'CUP', price:3000, tag:'new', emoji:'', img:'804.jpeg'},
+  {id:805, cat:'accesorios', name:'Maletin impermeable', desc:'Confecciòn industrial (color negro)', currency:'USD', price:10, tag:'new', emoji:'', img:'805.jpeg'},
+  {id:806, cat:'accesorios', name:'Maletin impermeable', desc:'Confecciòn industrial (color azul)', currency:'USD', price:10, tag:'new', emoji:'', img:'806.jpeg'},
+  {id:807, cat:'accesorios', name:'Gafas estilo aviador', desc:'', currency:'CUP', price:1500, tag:'new', emoji:'', img:'807.jpeg'},
+
+// MISCELANEAS
+  {id:901, cat:'miscelaneas', name:'Protector de voltaje carril DIN', desc:'63 A', currency:'USD', price:18, tag:'new', emoji:'', img:'901.jpeg'},
+  {id:902, cat:'miscelaneas', name:'Masajeador y limpiador facial', desc:'Kit de 5 cabezales', currency:'USD', price:10, tag:'new', emoji:'', img:'902.jpeg'},
+  {id:903, cat:'miscelaneas', name:'Talco contra rozaduras', desc:'', currency:'CUP', price:2500, tag:'new', emoji:'', img:'903.jpeg'},
+  {id:904, cat:'miscelaneas', name:'Crema contra rozaduras', desc:'', currency:'CUP', price:3500, tag:'new', emoji:'', img:'904.jpeg'},
+  {id:905, cat:'miscelaneas', name:'Cover de telefono', desc:'Huawei P30 Pro', currency:'USD', price:5, tag:'new', emoji:'', img:'905.jpeg'},
+
 ];
 
 const catMeta = {
-  joyeria:         {name:'Joyeria',                                  icon:'👗'},
-  damas:           {name:'Ropa y calzado de Damas',                  icon:'👗'},
-  caballeros:      {name:'Ropa y calzado de Caballeros',             icon:'👔'},
-  niños:           {name:'Ropa, calzado y juguetes',                 icon:'👟'},
-  electronicos:    {name:'Equipos elèctricos y fuentes de energìa',  icon:'👜'},
+  joyeria:         {name:'Joyeria',                               icon:''},
+  damas:           {name:'Ropa de Damas',                         icon:'👗'},
+  caballeros:      {name:'Ropa de Caballeros',                    icon:'👔'},
+  niños:           {name:'Ropa, calzado y juguetes para niños',   icon:''},
+  calzado:         {name:'Calzado',                               icon:''},
+  accesorios:      {name:'Accesorios',                            icon:''},
+  miscelaneas:     {name:'Miscelàneas',                           icon:''},
 };
 
 /* ══════════════════════════════════════════
