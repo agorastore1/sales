@@ -98,7 +98,7 @@ header{
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .section-count{font-size:.68rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
 .section-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:1rem 2rem 0}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.75rem}
 .no-results{padding:3rem 2rem;text-align:center;color:var(--muted);font-size:.9rem}
 
 /* PRODUCT CARD */
@@ -225,6 +225,18 @@ footer strong{color:var(--accent);font-weight:600}
 .img-modal-overlay.open{opacity:1;pointer-events:all}
 .img-modal-overlay img{max-width:90vw;max-height:85vh;border-radius:8px;object-fit:contain;box-shadow:0 0 60px rgba(0,0,0,.8)}
 .img-modal-close{position:fixed;top:1.5rem;right:1.5rem;background:rgba(201,166,85,.1);border:1px solid rgba(201,166,85,.3);border-radius:5px;padding:8px 14px;color:var(--accent);cursor:pointer;font-family:'Raleway',sans-serif;font-size:.82rem;letter-spacing:.05em}
+
+@media(max-width:480px){
+  .card-body{padding:.65rem}
+  .card-name{font-size:.78rem}
+  .card-desc{font-size:.65rem;margin-bottom:.5rem}
+  .price-main{font-size:.9rem}
+  .price-cup{font-size:.7rem}
+  .add-btn{font-size:.68rem;padding:7px}
+  .tag{font-size:.55rem}
+  .section{padding:1.25rem 1rem .75rem}
+  .grid{gap:.5rem}
+}
 </style>
 </head>
 <body>
