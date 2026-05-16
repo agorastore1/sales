@@ -377,6 +377,8 @@ const CUP_RATE  = 540;          // tasa de cambio USD → CUP
 ══════════════════════════════════════════ */
 const products = [
   // JOYERIA
+  {id:42, cat:'joyeria', name:'Conjunto de cadena aretes y pulsera', desc:'Baño de plata', currency:'USD', price:20, tag:'new', emoji:'', img:'42.jpeg'},
+  {id:41, cat:'joyeria', name:'Cadena doble con dije', desc:'Acero inoxidable - baño dorado - Marca Forever21', currency:'USD', price:10, tag:'new', emoji:'', img:'41.jpeg'},
   {id:10, cat:'joyeria', name:'Conjunto de cadena, pulsera y 4 charms (suerte)', desc:' Baño de plata', currency:'USD', price:25, tag:'new', emoji:'', img:'10.jpeg'},
   {id:11, cat:'joyeria', name:'Conjunto de cadena, pulsera y 4 charms (realeza)', desc:' Baño de plata', currency:'USD', price:25, tag:'new', emoji:'', img:'11.jpeg'},
   {id:12, cat:'joyeria', name:'Conjunto de cadena fina, pulsera rigida y  charm', desc:' Baño de plata', currency:'USD', price:20, tag:'new', emoji:'', img:'12.jpeg'},
@@ -412,6 +414,11 @@ const products = [
   {id:9, cat:'joyeria', name:'Conjunto de cadena, pulsera y 4 charms (primavera)', desc:' Baño de plata', currency:'USD', price:25, tag:'new', emoji:'', img:'9.webp'},
   
   // DAMAS
+  {id:291, cat:'damas', name:'Blumer (3) y ajustador ', desc:'Talla M (conjunto)', currency:'CUP', price:4000, tag:'new', emoji:'', img:'291.jpeg'},
+  {id:237, cat:'damas', name:'Conjunto de blusa corta y saya', desc:'Talla M', currency:'USD', price:10, tag:'new', emoji:'', img:'237.jpeg'},
+  {id:292, cat:'damas', name:'Mono pantalon floreado', desc:'Talla S-M', currency:'CUP', price:3000, tag:'new', emoji:'', img:'292.jpeg'},
+  {id:293, cat:'damas', name:'Saya negra ', desc:'Talla M', currency:'CUP', price:1000, tag:'', emoji:'', img:'293.jpeg'},
+  {id:294, cat:'damas', name:'Short de mezclilla ', desc:'Talla M', currency:'CUP', price:1500, tag:'', emoji:'', img:'294.jpeg'},
   {id:265, cat:'damas', name:'Blusa fresca ', desc:'Talla M', currency:'CUP', price:1000, tag:'', emoji:'', img:'265.jpeg'},
   {id:266, cat:'damas', name:'Blusa de hilo', desc:'Talla M  -  Marca OldNavy', currency:'USD', price:5, tag:'new', emoji:'', img:'266.jpeg'},
   {id:267, cat:'damas', name:'Jean de mezclilla acampanado', desc:'Talla M', currency:'USD', price:8, tag:'new', emoji:'', img:'267.jpeg'},
@@ -438,8 +445,7 @@ const products = [
   {id:288, cat:'damas', name:'Pescador de mezclilla gris', desc:'Talla M', currency:'CUP', price:2500, tag:'', emoji:'', img:'288.jpeg'},
   {id:289, cat:'damas', name:'Jean de mezclilla aguas claras', desc:'Talla M', currency:'USD', price:15, tag:'new', emoji:'', img:'289.jpeg'},
   {id:290, cat:'damas', name:'Jean elastizado color mostaza', desc:'Talla M', currency:'USD', price:10, tag:'new', emoji:'', img:'290.jpeg'},
-  {id:237, cat:'damas', name:'Blusa verde olivo', desc:'Talla L', currency:'USD', price:5, tag:'new', emoji:'', img:'237.jpeg'},
-  {id:238, cat:'damas', name:'Conjunto Blusa azul y salla Beige corte secretaria', desc:'Talla M', currency:'USD', price:10, tag:'new', emoji:'', img:'238.jpeg'},
+  {id:238, cat:'damas', name:'Conjunto Blusa azul y saya Beige corte secretaria', desc:'Talla M', currency:'USD', price:10, tag:'new', emoji:'', img:'238.jpeg'},
   {id:239, cat:'damas', name:'Enguatada escotada negra', desc:'Talla M', currency:'CUP', price:1000, tag:'', emoji:'', img:'239.jpeg'},
   {id:240, cat:'damas', name:'Tapasol azul oscuro', desc:'Talla M', currency:'CUP', price:1500, tag:'', emoji:'', img:'240.jpeg'},
   {id:241, cat:'damas', name:'Conjunto crop top y saya', desc:'Talla M', currency:'USD', price:10, tag:'new', emoji:'', img:'241.jpeg'},
@@ -531,6 +537,11 @@ const products = [
   {id:410, cat:'caballeros', name:'Pantalon de mezclilla gris', desc:'Talla 32', currency:'USD', price:15, tag:'new', emoji:'', img:'410.jpeg'},
 
   // NIÑOS
+  {id:504, cat:'niños', name:'Camiseta fresca', desc:'Talla 4-5', currency:'CUP', price:1000, tag:'', emoji:'', img:'504.jpeg'},
+  {id:505, cat:'niños', name:'Blusa de tirantes color gris', desc:'Talla 4-5', currency:'CUP', price:1000, tag:'', emoji:'', img:'505.jpeg'},
+  {id:506, cat:'niños', name:'Vestido con flores', desc:'Talla 4-5', currency:'CUP', price:1200, tag:'', emoji:'', img:'506.jpeg'},
+  {id:507, cat:'niños', name:'Licra rayada ', desc:'Talla 4-5', currency:'CUP', price:800, tag:'', emoji:'', img:'507.jpeg'},
+  {id:508, cat:'niños', name:'Blusa floreada ', desc:'Talla 4-5', currency:'CUP', price:1000, tag:'', emoji:'', img:'508.jpeg'},
   {id:501, cat:'niños', name:'Hebillas de mariposas en 3D', desc:'Par', currency:'CUP', price:500, tag:'new', emoji:'', img:'501.jpeg'},
   {id:502, cat:'niños', name:'Juego de laberinto', desc:'', currency:'CUP', price:600, tag:'new', emoji:'', img:'502.jpeg'},
   {id:503, cat:'niños', name:'Camisa para niño', desc:'Talla S', currency:'CUP', price:2000, tag:'new', emoji:'', img:'503.jpeg'},
@@ -542,6 +553,7 @@ const products = [
   {id:603, cat:'calzado', name:'Zapatos engomados', desc:'Marca CROCS  -  Talla 38', currency:'CUP', price:5000, tag:'new', emoji:'', img:'603.webp'},
   {id:604, cat:'calzado', name:'Pantunflas', desc:'Talla 39 - 40', currency:'CUP', price:1000, tag:'new', emoji:'', img:'604.jpeg'},
 // ACCESORIOS
+  {id:808, cat:'accesorios', name:'Cartera pequeña de noche', desc:'', currency:'USD', price:5, tag:'new', emoji:'', img:'808.jpeg'},
   {id:801, cat:'accesorios', name:'Bolso de vinyl', desc:'Confecciòn industrial (color verde)', currency:'USD', price:15, tag:'new', emoji:'', img:'801.webp'},
   {id:802, cat:'accesorios', name:'Bolso de vinyl', desc:'Confecciòn industrial (color negro)', currency:'USD', price:15, tag:'new', emoji:'', img:'802.webp'},
   {id:803, cat:'accesorios', name:'Bolso de vinyl', desc:'Confecciòn industrial (color marròn)', currency:'USD', price:15, tag:'new', emoji:'', img:'803.webp'},
